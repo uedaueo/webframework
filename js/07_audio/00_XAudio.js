@@ -264,6 +264,15 @@ function X_Audio_startDetectionBackend( backend, xaudio, sourceList, option ){
         sup;
     
     if( source && backend ){
+        /*
+         * source (url) に # がついたままだと Safari で
+         * エラーが発生するので、# 以降をはずす。
+         * by tueda, 2018/12/31
+         */
+        if (hash[ 'ext' ]) {
+            source = X_URL_cleanup( source );
+        }
+
         sup      = [ xaudio, sourceList, option, source, ext ];
         sup[ 5 ] = sup;
         
