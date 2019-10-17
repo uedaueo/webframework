@@ -225,7 +225,11 @@ var X_AudioSprite_members =
 						};
 					};
 				};
-				return tracks.indexOf( track );
+                var ret_val = {};
+                ret_val.spriteID = tracks.indexOf(track);
+                ret_val.track = track;
+                return ret_val;
+                //return tracks.indexOf(track);
 			};
 			return -1;
 		},
