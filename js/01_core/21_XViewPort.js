@@ -277,7 +277,7 @@ X[ 'ViewPort' ] = {
             ) :*/            
         return [
             X_ViewPort_rootElement.scrollWidth  || X_ViewPort_rootElement.offsetWidth,
-            X_ViewPort_rootElement.scrollHeight || X_ViewPort_rootElement.offsetHeight
+            X_ViewPort_rootElement.scrollHeight || X_ViewPort_rootElement.offsetHeight || X_ViewPort_rootElement.clientHeight
         ];
     },
     
