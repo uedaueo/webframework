@@ -100,7 +100,8 @@ var X_WebAudio_Context      =	// 4s 以下ではない iPad 2G または iPad mi
 								( window[ 'AudioContext' ] || window[ 'webkitAudioContext' ] || window[ 'mozAudioContext' ] ),
 	X_WebAudio_context,
 	X_WebAudio_BUFFER_LIST  = [],
-	X_WebAudio_need1stTouch	= X_UA[ 'iOS' ],
+	// X_WebAudio_need1stTouch	= X_UA[ 'iOS' ], //常にボタンを押下して音声を再生する変更
+	X_WebAudio_need1stTouch	= true,
 	X_WebAudio_isNoTouch    = X_WebAudio_need1stTouch,
 	X_WebAudio_needRateFix  = X_WebAudio_need1stTouch,
 	X_WebAudio,
