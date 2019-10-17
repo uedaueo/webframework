@@ -584,6 +584,7 @@ X[ 'ViewPort' ] = {
                 [ X_ViewPort_rootElement.clientWidth, X_ViewPort_rootElement.clientHeight ] :
                 X_UA[ 'Opera' ] < 12 ? // Opera10.1 では ズーム + resize 時に表示領域のサイズが取れない！
                 [ X_ViewPort_rootElement.offsetWidth, X_ViewPort_rootElement.offsetHeight ] :
+                X_UA["iOS"] ? [document.body.clientWidth, document.body.clientHeight] : // iOS 時の サイズ取得 ( document.body になっているのは TODO:要確認 )
                 [ window.innerWidth, window.innerHeight ];
         };
 
