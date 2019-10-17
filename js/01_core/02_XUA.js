@@ -226,6 +226,13 @@ var X_UA = X[ 'UA' ] = {},
                  * @type {boolean}
                  */
                 X_UA[ sys ] = true;
+                if ( 'ontouchend' in document ){  // iPadOS対応
+                    v = dav.split("Version/")[1].split(".");
+                    X_UA["iOSMajor"] = parseFloat(v[0]) || 0;
+                    X_UA["iOSMinor"] = parseFloat(v[1]) || 0;
+                    X_UA["iOSPatch"] = parseFloat(v[2]) || 0;
+                    X_UA["iOS"] = X_UA["iOSMajor"] + X_UA["iOSMinor"] / 10;
+                }
         };
     } else
     if( ( sys.indexOf( 'Linux' ) + 1 ) || ( sys.indexOf( 'Android' ) + 1 ) ){
