@@ -880,7 +880,12 @@ var X_elmHtml = document.documentElement ||
     X_elmBody;
 
 if( navigator.msPointerEnabled || navigator.pointerEnabled ) X_UA_HID.POINTER = true;
-if( !X_UA_HID.POINTER && window.ontouchstart !== undefined ) X_UA_HID.TOUCH   = true;
+// if( !X_UA_HID.POINTER && window.ontouchstart !== undefined ) X_UA_HID.TOUCH   = true;
+//Windows tablet, Chrome OS 対応
+if(( !X_UA_HID.POINTER && window.ontouchstart !== undefined )
+    || ( !X_UA_HID.POINTER && !X_UA_HID.TOUCH && window.onpointerdown !== undefined )) {
+    X_UA_HID.TOUCH   = true;
+}
 
 //alert(X_UA[ 'Safari' ]  + ' ' + X_UA[ 'WebKit' ] + '\n\n' + navigator.userAgent + '\n\n' + navigator.appVersion + '\n\n' + navigator.platform );
 
