@@ -169,7 +169,7 @@ if( X_XHR_w3c || X_XHR_msXML ){
                     password = obj[ 'password' ],
                     headers  = obj[ 'headers' ] || {},
                     postdata = obj[ 'postdata' ] || '',
-                    timeout  = obj[ 'timeout' ] || 20000,
+                    timeout  = obj[ 'timeout' ] || 60000,
                     noCache  = obj[ 'cache' ] !== true,
                     dataType = X_XHR._dataType = obj[ 'dataType' ], // 明示され無い場合、拡張子が入っている
                     xDomain  = !X_URL_isSameDomain( url ),
